@@ -48,3 +48,70 @@ nav {
     color: #ae5fce;
     margin: 10rem;
 }
+
+@media screen and (max-width: 768px) {
+    .landing {
+        flex-direction: column;
+    }
+    
+    nav {
+        position: relative;
+    }
+
+    .hamburger {
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        cursor: pointer;
+        z-index: 2;
+    }
+    .line {
+        width: 3rem;
+        height: 3px;
+        background-color: white;
+        margin: .5rem;
+    }
+    
+    .nav-links {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(10rem at 90% -10%);
+        -webkit-clip-path: circle(10rem at 90% -10%);
+        background-color: #5b78c7;
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+
+    .nav-links.open {
+        clip-path: circle(100rem at 90% -10%);
+        -webkit-clip-path: circle(100rem at 90% -10%);
+        pointer-events: all;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(1) {
+        transition: all .5s ease-out  .2s;
+    }
+
+    .nav-links li:nth-child(2) {
+        transition: all .5s ease-out  .4s;
+    }
+
+    .nav-links li:nth-child(3) {
+        transition: all .5s ease-out  .6s;
+    }
+
+    .nav-links li.fade {
+        opacity: 1;
+    }
+
+    .nav-links li a {
+        font-size: 2.5rem;
+    }
+}
